@@ -28,12 +28,21 @@
   
   .colors {
     position: fixed;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(99, 82, 250, 0.5);
+    padding: 5px 10px;
+    box-shadow: 0.2rem 0.3rem black;
   }
   
   .color {
     display: inline-block;
     height: 48px;
     width: 48px;
+    padding: 4px;
   }
   
   .color.black { background-color: black; }
@@ -41,3 +50,68 @@
   .color.green { background-color: green; }
   .color.blue { background-color: blue; }
   .color.yellow { background-color: yellow; }
+
+  /* 
+    For icons that are added
+  */
+  .icons{
+      padding: 5px;
+      font-size: 30px;
+  }
+
+  /* 
+    Icon hints using tooltip
+  */
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    font-size: 1.2rem;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+     /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+/* 
+  color picker
+*/
+
+.tool{
+  padding: 0;
+  margin: 0;
+}
+
+#color_picker{
+  border: none;
+  background: none;
+  height: 48px;
+  width: 48px;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+

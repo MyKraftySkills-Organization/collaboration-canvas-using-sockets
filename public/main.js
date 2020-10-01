@@ -6,6 +6,12 @@
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
   var context = canvas.getContext('2d');
+ 
+  // Adding color Picker
+  var colorPicker = document.getElementById('color_picker')
+ 
+  // clear button
+  var clearBtn = document.getElementById('clearCanvas');
 
   var current = {
     color: 'black'
@@ -23,9 +29,19 @@
   canvas.addEventListener('touchcancel', onMouseUp, false);
   canvas.addEventListener('touchmove', throttle(onMouseMove, 10), false);
 
-  for (var i = 0; i < colors.length; i++){
-    colors[i].addEventListener('click', onColorUpdate, false);
-  }
+
+  // Color picker events 
+  colorPicker.addEventListener('change', () => {
+    current.color = colorPicker.value;
+  })
+
+
+  // Clear Button
+  clearBtn.addEventListener('click', clearCanvas, false);
+
+  // for (var i = 0; i < colors.length; i++){
+  //   colors[i].addEventListener('click', onColorUpdate, false);
+  // }
 
   socket.on('drawing', onDrawingEvent);
 
@@ -74,9 +90,9 @@
     current.y = e.clientY||e.touches[0].clientY;
   }
 
-  function onColorUpdate(e){
-    current.color = e.target.className.split(' ')[1];
-  }
+  // function onColorUpdate(e){
+  //   current.color = e.target.className.split(' ')[1];
+  // }
 
   // limit the number of events per second
   function throttle(callback, delay) {
@@ -101,6 +117,11 @@
   function onResize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+  }
+
+
+  function clearCanvas(e){
+    context.clearRect(0, 0, canvas.width, canvas.height);
   }
 
 })();
