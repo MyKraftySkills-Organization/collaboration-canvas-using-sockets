@@ -1,6 +1,6 @@
 {
   "name": "collaboration-canvas-using-sockets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -8,13 +8,15 @@
     "devstart": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["whiteboard", "socket.io", "collaboration", "shareable"],
+  "author": "Akshit Batra",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "http": "0.0.1-security",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
