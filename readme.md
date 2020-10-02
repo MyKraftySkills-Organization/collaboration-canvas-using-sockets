@@ -11,3 +11,7 @@ Latest Updates:
 2. Clear Icon is added, which will clear the canvas.
 3. Todo: Clear is working only on local canvas and on all instance of canvas.
 
+Latest Updates:
+1. Trying to add create and join meeting functionality with admin rights.
+2. Added a home page to create and join meeting
+3. Adding/ Removing users from the meeting.

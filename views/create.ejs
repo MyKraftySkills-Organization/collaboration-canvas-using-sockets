@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="joinOuterContainer">
+        <div class="joinInnerContainer">
+            <h1 class="heading">Create</h1>
+            <form action="/room" method="POST">
+                <div>
+                    <input placeholder="Name" name="name" class="joinInput" type="text" />
+                </div>
+                <div>
+                    <input class="joinInput mt-20" name="room" type="hidden" id="room"/>
+                </div>
+                <input type="submit" class="button mt-20" value="Create Room" />
+                <a class="button mt-20" href="/join">Want to Join Existing Room?</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const ROOM_ID = "<%= room %>";
+        document.getElementById("room").value = ROOM_ID;
+    </script>
+</body>
+</html>
