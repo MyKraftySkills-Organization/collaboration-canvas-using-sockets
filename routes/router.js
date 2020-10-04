@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const url = require('url');
 const { v4: uuidv4 } = require('uuid');
 
   router.get('/join', (req, res) => {
@@ -15,7 +14,7 @@ const { v4: uuidv4 } = require('uuid');
     var name = req.body.name;
     var room = req.body.room;
     var role = "admin";
-    console.log(name + " " + room);
+    console.log(name + " " + room + " " + role);
     res.render('board', {name, room, role});
   })
 
